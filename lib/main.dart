@@ -5,6 +5,7 @@ void main() {
     MaterialApp(
       title: "Awesome App",
       home: HomePage(),
+      theme: ThemeData(primarySwatch: Colors.purple),
     ),
   );
 }
@@ -17,43 +18,38 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Awesome App"),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Align(
-          alignment: Alignment.center,
-          child: Container(
-            color: Colors.black,
-            width: 200,
-            height: 400,
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  Container(
-                    padding: EdgeInsets.all(8),
-                    width: 100,
-                    height: 100,
-                    color: Colors.green,
-                  ),
-                  Container(
-                    padding: EdgeInsets.all(8),
-                    width: 100,
-                    height: 100,
-                    color: Colors.yellow,
-                  ),
-                  Container(
-                    padding: EdgeInsets.all(8),
-                    width: 100,
-                    height: 100,
-                    color: Colors.orange,
-                  ),
-                ],
+      body: Container(),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: const <Widget>[
+            UserAccountsDrawerHeader(
+              accountName: Text("Saikat Maity"),
+              accountEmail: Text("skt.maity01@gmail.com"),
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: NetworkImage(
+                  "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+                ),
               ),
             ),
-          ),
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text("Account"),
+              subtitle: Text("Person"),
+              trailing: Icon(Icons.edit),
+            ),
+            ListTile(
+              leading: Icon(Icons.email),
+              title: Text("Email"),
+              subtitle: Text("skt.maity01@gmail.com"),
+              trailing: Icon(Icons.send),
+            ),
+          ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.edit),
       ),
     );
   }

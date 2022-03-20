@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -26,6 +28,11 @@ class HomePage extends StatelessWidget {
             UserAccountsDrawerHeader(
               accountName: Text("Saikat Maity"),
               accountEmail: Text("skt.maity01@gmail.com"),
+
+              //without using CircleAvatar
+              //currentAccountPicture:Image.network("https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"),
+
+              //using CircleAvatar
               currentAccountPicture: CircleAvatar(
                 backgroundImage: NetworkImage(
                   "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
